@@ -1,9 +1,11 @@
 package winter.springboot.id1002.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +32,12 @@ public class restapi_controller {
     @GetMapping("/get")
     public List<entity_class>  getAllDetails(){
         return service.getAllEmployee();
+    }
+
+    @GetMapping("/get/{id}")
+    public  entity_class findbyId(@PathVariable Long id){
+        Optional<entity_class> detail = service.findbyId_(id);
+        System.out.println("ID: " + id);
+        return detail.orElse(null);
     }
 }

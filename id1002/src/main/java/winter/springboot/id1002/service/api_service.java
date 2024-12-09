@@ -1,6 +1,7 @@
 package winter.springboot.id1002.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,11 @@ public class api_service {
     public void saveDetails(entity_class entity){
         sql_operation.save(entity);
     }
+
+    public Optional<entity_class> findbyId_(Long id){
+        return sql_operation.findById(id);
+    } 
+
+
 
 }
