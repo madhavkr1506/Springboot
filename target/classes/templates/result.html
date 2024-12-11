@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/result.css">
+</head>
+<body>
+    <div class="container">
+        <p><h1 id="heading">This is the result of how the person giving the test perceives the other person</h1></p>
+
+        <div class="positive">
+            <h3>Positive: The person is seen in a good light.</h3>
+            <ul>
+                <li th:each="sentence : ${positiveSentences}" th:text="${sentence}"></li>
+            </ul>
+        </div>
+
+        <div class="negative">
+            <h3>Negative: The person is viewed critically.</h3>
+            <ul>
+                <li th:each="sentence : ${negativeSentences}" th:text="${sentence}"></li>
+            </ul>
+        </div>
+
+        <div class="neutral">
+            <h3>Neutral: The perception is neither good nor bad.</h3>
+            <ul>
+                <li th:each="sentence : ${neutralSentences}" th:text="${sentence}"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
